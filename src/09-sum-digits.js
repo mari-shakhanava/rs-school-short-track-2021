@@ -11,12 +11,12 @@
  *
  */
 function getSumOfDigits(n) {
-  while (n > 9) {
-    // eslint-disable-next-line no-param-reassign
-    n = n.toString().split('').map(Number).reduce((a, b) => a + b);
-    getSumOfDigits(n);
+  let sum = n;
+  while (sum > 9) {
+    sum = sum.toString().split('').map(Number).reduce((a, b) => a + b);
+    getSumOfDigits(sum);
   }
-  return n;
+  return sum;
 }
 
 module.exports = getSumOfDigits;
