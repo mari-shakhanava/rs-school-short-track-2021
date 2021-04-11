@@ -19,13 +19,13 @@ class Queue {
   }
 
   get size() {
-    return this.newNode.length;
+    return this.length;
   }
 
   enqueue(element) {
     const newNode = new ListNode(element);
     newNode.value = element;
-    if (!this.head) {
+    if (!this.head || !this.tail) {
       this.head = newNode;
       this.tail = newNode;
     } else {
